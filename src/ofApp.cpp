@@ -37,7 +37,7 @@ void ofApp::setup() {
 	// we need to disable ARB textures in order to use normalized texcoords
 	ofDisableArbTex();
 	texture.load("dot.png");
-	//ofEnableAlphaBlending();
+	ofEnableAlphaBlending();
     ofDisableAlphaBlending();
     ofEnableDepthTest();
 }
@@ -61,13 +61,6 @@ void ofApp::update() {
 		billboardVels[i] *= 0.94f;
     	billboards.setNormal(i,glm::vec3(12 + billboardSizeTarget[i] * ofNoise(t+i),0,0));
 	}
-
-
-	// move the camera around
-	float mx = (float)mouseX/(float)ofGetWidth();
-	float my = (float)mouseY/(float)ofGetHeight();
-
-
 }
 
 //--------------------------------------------------------------
